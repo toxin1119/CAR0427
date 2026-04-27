@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026 雙廂自排小貨車對照表</title>
+<title>2026 雙廂商用車規格對照表 (修正版)</title>
 
 <style>
 :root {
@@ -50,17 +50,6 @@ header {
     transition: 0.3s;
 }
 
-.car-card:hover {
-    transform: translateY(-6px);
-}
-
-.car-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    cursor: pointer;
-}
-
 .car-title {
     text-align: center;
     padding: 12px;
@@ -100,17 +89,9 @@ td {
     text-align: left;
 }
 
-tr:nth-child(even) td:not(.row-label) {
-    background: #fafbff;
-}
-
-tr:hover td {
-    background: #f1f5ff;
-}
-
-.highlight {
+.highlight-red {
     color: var(--accent);
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .note {
@@ -119,55 +100,28 @@ tr:hover td {
     color: #666;
     text-align: right;
 }
-
-#lightbox {
-    display: none;
-    position: fixed;
-    background: rgba(0,0,0,0.9);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 999;
-}
-
-#lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-    border: 3px solid white;
-}
 </style>
 </head>
 
 <body>
 
 <header>
-    <h1>2026年 雙廂自排小貨車規格對照</h1>
+    <h1>2026年 雙廂商用車規格對照 (修正版)</h1>
 </header>
 
 <div class="container">
 
 <div class="car-grid">
-
-<div class="car-card">
-    <img src="2.jpg" alt="Hyundai Porter II" onclick="zoom(this.src)">
-    <div class="car-title">Hyundai Porter II (小霸王)</div>
-</div>
-
-<div class="car-card">
-    <img src="3.jpg" alt="Kia 卡旺 K2500" onclick="zoom(this.src)">
-    <div class="car-title">Kia 卡旺 K2500</div>
-</div>
-
+    <div class="car-card">
+        <div class="car-title">Hyundai Porter II (小霸王)</div>
+    </div>
+    <div class="car-card">
+        <div class="car-title">Kia 卡旺 K2500</div>
+    </div>
 </div>
 
 <div class="table-wrapper">
 <table>
-
 <thead>
 <tr>
 <th class="row-label">品牌車款</th>
@@ -175,72 +129,47 @@ tr:hover td {
 <th>Kia 卡旺 K2500</th>
 </tr>
 </thead>
-
 <tbody>
-
-<tr>
-<td class="row-label">車型版本</td>
-<td>雙廂 (手排 / 手自排)</td>
-<td>雙廂 (手排 / 手自排)</td>
-</tr>
-
 <tr>
 <td class="row-label">座位數</td>
 <td>6人</td>
 <td>6人</td>
 </tr>
-
-<tr>
-<td class="row-label">引擎動力</td>
-<td>2.5L 柴油渦輪</td>
-<td>2.5L 柴油渦輪</td>
-</tr>
-
-<tr>
-<td class="row-label">變速系統</td>
-<td class="highlight">6速手排 / 5速手自排</td>
-<td class="highlight">6速手排 / 5速手自排</td>
-</tr>
-
 <tr>
 <td class="row-label">驅動方式</td>
 <td>後輪驅動 (2WD)</td>
-<td>2WD / 4WD (分時四驅)</td>
+<td>2WD / 4WD</td>
 </tr>
-
+<tr>
+<td class="row-label">變速系統</td>
+<td>6速手排 / 5速手自排</td>
+<td>
+    2WD: 手排 / 手自排<br>
+    <span class="highlight-red">4WD: 僅限手排</span>
+</td>
+</tr>
+<tr>
+<td class="row-label">手自排可行性</td>
+<td class="highlight-red">可選擇</td>
+<td>
+    2WD: <span class="highlight-red">可選擇</span><br>
+    4WD: 無自排選項
+</td>
+</tr>
 <tr>
 <td class="row-label">貨斗長度(mm)</td>
 <td>2,185</td>
 <td>2,185</td>
 </tr>
-
-<tr>
-<td class="row-label">特色評比</td>
-<td class="highlight">乘用舒適性佳、維修據點多</td>
-<td class="highlight">具備 4WD 選項、安全配備齊全</td>
-</tr>
-
 </tbody>
 </table>
 
 <div class="note">
-※ 規格僅供參考，最新資訊請以原廠官網公佈為準
+※ 註：卡旺 4WD 版本因機械結構與定位，目前全數僅提供手排設定。
 </div>
 
 </div>
-
 </div>
-
-<div id="lightbox" onclick="this.style.display='none'">
-    <img id="lightbox-img">
-</div>
-
-<script>
-function zoom(src){
-    document.getElementById("lightbox").style.display = "flex";
-    document.getElementById("lightbox-img").src = src;
-}
-</script>
 
 </body>
 </html>
