@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026 雙廂商用車規格對照表 (修正版)</title>
+<title>2026 雙廂自排商用車規格對照</title>
 
 <style>
 :root {
@@ -23,38 +23,14 @@ body {
 header {
     background: linear-gradient(135deg, var(--primary), #4c5bd4);
     color: white;
-    padding: 40px 20px;
+    padding: 30px 20px;
     text-align: center;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 30px auto;
     padding: 10px;
-}
-
-.car-grid {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-.car-card {
-    background: white;
-    width: 300px;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: 0.3s;
-}
-
-.car-title {
-    text-align: center;
-    padding: 12px;
-    font-weight: bold;
-    color: var(--primary);
 }
 
 .table-wrapper {
@@ -87,10 +63,16 @@ td {
     font-weight: 600;
     color: var(--primary);
     text-align: left;
+    width: 150px;
 }
 
 .highlight-red {
     color: var(--accent);
+    font-weight: bold;
+}
+
+.highlight-blue {
+    color: #1976d2;
     font-weight: bold;
 }
 
@@ -106,20 +88,10 @@ td {
 <body>
 
 <header>
-    <h1>2026年 雙廂商用車規格對照 (修正版)</h1>
+    <h1>2026年 雙廂自排商用車規格對照表</h1>
 </header>
 
 <div class="container">
-
-<div class="car-grid">
-    <div class="car-card">
-        <div class="car-title">Hyundai Porter II (小霸王)</div>
-    </div>
-    <div class="car-card">
-        <div class="car-title">Kia 卡旺 K2500</div>
-    </div>
-</div>
-
 <div class="table-wrapper">
 <table>
 <thead>
@@ -127,45 +99,51 @@ td {
 <th class="row-label">品牌車款</th>
 <th>Hyundai Porter II</th>
 <th>Kia 卡旺 K2500</th>
+<th>Mitsubishi 得利卡</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td class="row-label">引擎燃料</td>
+<td>柴油渦輪</td>
+<td>柴油渦輪</td>
+<td class="highlight-blue">汽油</td>
+</tr>
+<tr>
 <td class="row-label">座位數</td>
 <td>6人</td>
 <td>6人</td>
+<td>6人</td>
+</tr>
+<tr>
+<td class="row-label">自排型式</td>
+<td>5速手自排</td>
+<td>5速手自排 (僅2WD)</td>
+<td>5速自排</td>
 </tr>
 <tr>
 <td class="row-label">驅動方式</td>
 <td>後輪驅動 (2WD)</td>
-<td>2WD / 4WD</td>
+<td>2WD / 4WD (<span class="highlight-red">4WD無自排</span>)</td>
+<td>後輪驅動 (2WD)</td>
 </tr>
 <tr>
-<td class="row-label">變速系統</td>
-<td>6速手排 / 5速手自排</td>
-<td>
-    2WD: 手排 / 手自排<br>
-    <span class="highlight-red">4WD: 僅限手排</span>
-</td>
+<td class="row-label">最大扭力</td>
+<td>26.5 kgm</td>
+<td>26.5 kgm</td>
+<td>19.4 kgm</td>
 </tr>
 <tr>
-<td class="row-label">手自排可行性</td>
-<td class="highlight-red">可選擇</td>
-<td>
-    2WD: <span class="highlight-red">可選擇</span><br>
-    4WD: 無自排選項
-</td>
-</tr>
-<tr>
-<td class="row-label">貨斗長度(mm)</td>
-<td>2,185</td>
-<td>2,185</td>
+<td class="row-label">特色評比</td>
+<td>最舒適、配備佳</td>
+<td>有4WD手排可選</td>
+<td><span class="highlight-blue">保養最省、維修零件極多</span></td>
 </tr>
 </tbody>
 </table>
 
 <div class="note">
-※ 註：卡旺 4WD 版本因機械結構與定位，目前全數僅提供手排設定。
+※ 中華得利卡雖然也有 4WD 版本，但目前台灣市售的雙廂 4WD 亦是以手排為主。
 </div>
 
 </div>
