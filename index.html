@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
@@ -21,7 +20,6 @@ body {
     color: #333;
 }
 
-/* Header */
 header {
     background: linear-gradient(135deg, var(--primary), #4c5bd4);
     color: white;
@@ -29,18 +27,12 @@ header {
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-}
-
-/* Layout */
 .container {
     max-width: 1000px;
     margin: 30px auto;
     padding: 10px;
 }
 
-/* 卡片 */
 .car-grid {
     display: flex;
     gap: 20px;
@@ -76,7 +68,6 @@ header h1 {
     color: var(--primary);
 }
 
-/* 表格 */
 .table-wrapper {
     background: white;
     border-radius: 14px;
@@ -90,29 +81,18 @@ table {
     border-collapse: collapse;
 }
 
-/* 表頭 */
 th {
     background: var(--primary);
     color: white;
     padding: 14px;
-    font-weight: 600;
 }
 
-th:first-child {
-    border-top-left-radius: 10px;
-}
-th:last-child {
-    border-top-right-radius: 10px;
-}
-
-/* 內容 */
 td {
     padding: 14px;
     border-bottom: 1px solid #eee;
     text-align: center;
 }
 
-/* 左欄 */
 .row-label {
     background: var(--primary-light);
     font-weight: 600;
@@ -120,21 +100,24 @@ td {
     text-align: left;
 }
 
-/* 斑馬紋 */
 tr:nth-child(even) td:not(.row-label) {
     background: #fafbff;
 }
 
-/* hover */
 tr:hover td {
     background: #f1f5ff;
-    transition: 0.2s;
 }
 
-/* 強調 */
 .highlight {
     color: var(--accent);
     font-weight: 600;
+}
+
+.note {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #666;
+    text-align: right;
 }
 
 /* Lightbox */
@@ -159,21 +142,17 @@ tr:hover td {
     border: 3px solid white;
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-    <h1>2026年 帶車斗車款規格對照</h1>
+    <h1>2026年 帶車斗車款規格對照（雙廂）</h1>
 </header>
 
 <div class="container">
 
-<!-- 車卡 -->
-
 <div class="car-grid">
-
 
 <div class="car-card">
     <img src="1.jpg" alt="DFSK 大穩發" onclick="zoom(this.src)">
@@ -190,10 +169,7 @@ tr:hover td {
     <div class="car-title">Kia 卡旺 K2500</div>
 </div>
 
-
 </div>
-
-<!-- 表格 -->
 
 <div class="table-wrapper">
 <table>
@@ -211,15 +187,15 @@ tr:hover td {
 
 <tr>
 <td class="row-label">車型版本</td>
-<td>S2.5t</td>
-<td>雙廂（手排為主，部分車型提供手自排）</td>
+<td>S2.5t 雙廂</td>
+<td>雙廂（手排 / 手自排）</td>
 <td>2WD / 4WD 雙廂</td>
 </tr>
 
 <tr>
 <td class="row-label">參考售價(萬)</td>
 <td>55–65</td>
-<td>98–110</td>
+<td>約100–115</td>
 <td>102–115</td>
 </tr>
 
@@ -233,14 +209,14 @@ tr:hover td {
 <tr>
 <td class="row-label">引擎動力</td>
 <td>1.5L 汽油</td>
-<td>2.5L 柴油</td>
+<td>2.5L 柴油渦輪</td>
 <td>2.5L 柴油</td>
 </tr>
 
 <tr>
 <td class="row-label">變速系統</td>
 <td>手排</td>
-<td>手排 / 手自排（AMT）</td>
+<td>6速手排 / 5速手自排</td>
 <td>手排</td>
 </tr>
 
@@ -254,8 +230,8 @@ tr:hover td {
 <tr>
 <td class="row-label">載重能力(kg)</td>
 <td>約1,200–1,300</td>
+<td>約1,500–1,575</td>
 <td>約1,300–1,400</td>
-<td>1,441 / 1,391</td>
 </tr>
 
 <tr>
@@ -267,25 +243,28 @@ tr:hover td {
 
 <tr>
 <td class="row-label">每年稅金(約)</td>
-<td>$8,640</td>
-<td>$10,440</td>
-<td>$10,440</td>
+<td>約11,000–12,000</td>
+<td>約10,000–11,000</td>
+<td>約10,000–11,000</td>
 </tr>
 
 <tr>
 <td class="row-label">特色評比</td>
 <td class="highlight">價格最親民</td>
 <td class="highlight">妥善率高、耐操</td>
-<td class="highlight">動力與配備最佳</td>
+<td class="highlight">動力與配備較完整</td>
 </tr>
 
 </tbody>
 </table>
+
+<div class="note">
+※ 規格與價格依實際車型與配備有所差異
 </div>
 
 </div>
 
-<!-- 放大圖片 -->
+</div>
 
 <div id="lightbox" onclick="this.style.display='none'">
     <img id="lightbox-img">
