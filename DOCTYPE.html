@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 帶車斗車款對照表</title>
+
+<style>
+:root {
+    --primary: #2f3e8f;
+    --primary-light: #eef2ff;
+    --accent: #e53935;
+    --bg: #f5f7fb;
+}
+
+body {
+    font-family: 'Microsoft JhengHei', sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: #333;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--primary), #4c5bd4);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Layout */
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+/* 卡片 */
+.car-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.car-card {
+    background: white;
+    width: 300px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.car-card:hover {
+    transform: translateY(-6px);
+}
+
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.car-title {
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* 表格 */
+.table-wrapper {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* 表頭 */
+th {
+    background: var(--primary);
+    color: white;
+    padding: 14px;
+    font-weight: 600;
+}
+
+th:first-child {
+    border-top-left-radius: 10px;
+}
+th:last-child {
+    border-top-right-radius: 10px;
+}
+
+/* 內容 */
+td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+/* 左欄 */
+.row-label {
+    background: var(--primary-light);
+    font-weight: 600;
+    color: var(--primary);
+    text-align: left;
+}
+
+/* 斑馬紋 */
+tr:nth-child(even) td:not(.row-label) {
+    background: #fafbff;
+}
+
+/* hover */
+tr:hover td {
+    background: #f1f5ff;
+    transition: 0.2s;
+}
+
+/* 強調 */
+.highlight {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* Lightbox */
+#lightbox {
+    display: none;
+    position: fixed;
+    background: rgba(0,0,0,0.9);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    border: 3px solid white;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>2026年 帶車斗車款規格對照</h1>
+</header>
+
+<div class="container">
+
+<!-- 車卡 -->
+
+<div class="car-grid">
+
+```
+<div class="car-card">
+    <img src="1.jpg" alt="DFSK 大穩發" onclick="zoom(this.src)">
+    <div class="car-title">DFSK 大穩發</div>
+</div>
+
+<div class="car-card">
+    <img src="2.jpg" alt="Hyundai Porter II" onclick="zoom(this.src)">
+    <div class="car-title">Hyundai Porter II</div>
+</div>
+
+<div class="car-card">
+    <img src="3.jpg" alt="Kia 卡旺 K2500" onclick="zoom(this.src)">
+    <div class="car-title">Kia 卡旺 K2500</div>
+</div>
+```
+
+</div>
+
+<!-- 表格 -->
+
+<div class="table-wrapper">
+<table>
+
+<thead>
+<tr>
+<th class="row-label">品牌車款</th>
+<th>DFSK 大穩發</th>
+<th>Hyundai Porter II</th>
+<th>Kia 卡旺 K2500</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td class="row-label">車型版本</td>
+<td>S2.5t</td>
+<td>雙廂（手排為主，部分車型提供手自排）</td>
+<td>2WD / 4WD 雙廂</td>
+</tr>
+
+<tr>
+<td class="row-label">參考售價(萬)</td>
+<td>55–65</td>
+<td>98–110</td>
+<td>102–115</td>
+</tr>
+
+<tr>
+<td class="row-label">座位數</td>
+<td>4人</td>
+<td>6人</td>
+<td>6人</td>
+</tr>
+
+<tr>
+<td class="row-label">引擎動力</td>
+<td>1.5L 汽油</td>
+<td>2.5L 柴油</td>
+<td>2.5L 柴油</td>
+</tr>
+
+<tr>
+<td class="row-label">變速系統</td>
+<td>手排</td>
+<td>手排 / 手自排（AMT）</td>
+<td>手排</td>
+</tr>
+
+<tr>
+<td class="row-label">驅動方式</td>
+<td>後輪驅動</td>
+<td>後輪驅動</td>
+<td>後輪 / 四輪</td>
+</tr>
+
+<tr>
+<td class="row-label">載重能力(kg)</td>
+<td>約1,200–1,300</td>
+<td>約1,300–1,400</td>
+<td>1,441 / 1,391</td>
+</tr>
+
+<tr>
+<td class="row-label">貨斗長度(mm)</td>
+<td>2,060</td>
+<td>2,185</td>
+<td>2,185</td>
+</tr>
+
+<tr>
+<td class="row-label">每年稅金(約)</td>
+<td>$8,640</td>
+<td>$10,440</td>
+<td>$10,440</td>
+</tr>
+
+<tr>
+<td class="row-label">特色評比</td>
+<td class="highlight">價格最親民</td>
+<td class="highlight">妥善率高、耐操</td>
+<td class="highlight">動力與配備最佳</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+</div>
+
+<!-- 放大圖片 -->
+
+<div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img">
+</div>
+
+<script>
+function zoom(src){
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+}
+</script>
+
+</body>
+</html>
