@@ -3,51 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>貨車選車工具</title>
+<title>2026 帶車斗車款對照表</title>
 
 <style>
+:root {
+    --primary: #2f3e8f;
+    --primary-light: #eef2ff;
+    --accent: #e53935;
+    --bg: #f5f7fb;
+}
+
 body {
     font-family: 'Microsoft JhengHei', sans-serif;
-    background: #f5f7fb;
     margin: 0;
+    background: var(--bg);
+    color: #333;
 }
 
 header {
-    background: #2f3e8f;
+    background: linear-gradient(135deg, var(--primary), #4c5bd4);
     color: white;
+    padding: 40px 20px;
     text-align: center;
-    padding: 30px;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 30px auto;
-    padding: 20px;
+    padding: 10px;
 }
 
-.box {
+.car-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.car-card {
     background: white;
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 20px;
+    width: 300px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
 
-button {
-    background: #2f3e8f;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
+.car-card:hover {
+    transform: translateY(-6px);
+}
+
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     cursor: pointer;
 }
 
-.result {
-    margin-top: 20px;
+.car-title {
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+    color: var(--primary);
 }
 
-.car {
+.table-wrapper {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: var(--primary);
+    color: white;
+    padding: 14px;
+}
+
+td {
+    padding: 14px;
     border-bottom: 1px solid #eee;
-    padding: 10px 0;
+    text-align: center;
+}
+
+.row-label {
+    background: var(--primary-light);
+    font-weight: 600;
+    color: var(--primary);
+    text-align: left;
+}
+
+tr:nth-child(even) td:not(.row-label) {
+    background: #fafbff;
+}
+
+tr:hover td {
+    background: #f1f5ff;
+}
+
+.highlight {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.note {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #666;
+    text-align: right;
+}
+
+/* Lightbox */
+#lightbox {
+    display: none;
+    position: fixed;
+    background: rgba(0,0,0,0.9);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    border: 3px solid white;
 }
 </style>
 </head>
@@ -55,111 +147,134 @@ button {
 <body>
 
 <header>
-<h1>🚗 貨車選車工具（雙廂）</h1>
+    <h1>2026年 帶車斗車款規格對照（雙廂）</h1>
 </header>
 
 <div class="container">
 
-<div class="box">
-<h3>選擇條件</h3>
+<div class="car-grid">
 
-<label>
-<input type="checkbox" id="auto"> 必須自排
-</label><br><br>
+<div class="car-card">
+    <img src="1.jpg" alt="DFSK 大穩發" onclick="zoom(this.src)">
+    <div class="car-title">DFSK 大穩發</div>
+</div>
 
-<label>
-<input type="checkbox" id="awd"> 需要四輪驅動
-</label><br><br>
+<div class="car-card">
+    <img src="2.jpg" alt="Hyundai Porter II" onclick="zoom(this.src)">
+    <div class="car-title">Hyundai Porter II</div>
+</div>
 
-<label>
-最低載重：
-<select id="load">
-<option value="0">不限</option>
-<option value="1000">1000kg</option>
-<option value="1300">1300kg</option>
-<option value="1500">1500kg</option>
-</select>
-</label><br><br>
-
-<button onclick="filterCars()">開始篩選</button>
+<div class="car-card">
+    <img src="3.jpg" alt="Kia 卡旺 K2500" onclick="zoom(this.src)">
+    <div class="car-title">Kia 卡旺 K2500</div>
+</div>
 
 </div>
 
-<div class="box result" id="result">
-請選擇條件後點擊篩選
+<div class="table-wrapper">
+<table>
+
+<thead>
+<tr>
+<th class="row-label">品牌車款</th>
+<th>DFSK 大穩發</th>
+<th>Hyundai Porter II</th>
+<th>Kia 卡旺 K2500</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td class="row-label">車型版本</td>
+<td>S2.5t 雙廂</td>
+<td>雙廂（手排 / 手自排）</td>
+<td>2WD / 4WD 雙廂</td>
+</tr>
+
+<tr>
+<td class="row-label">參考售價(萬)</td>
+<td>55–65</td>
+<td>約100–115</td>
+<td>102–115</td>
+</tr>
+
+<tr>
+<td class="row-label">座位數</td>
+<td>4人</td>
+<td>6人</td>
+<td>6人</td>
+</tr>
+
+<tr>
+<td class="row-label">引擎動力</td>
+<td>1.5L 汽油</td>
+<td>2.5L 柴油渦輪</td>
+<td>2.5L 柴油</td>
+</tr>
+
+<tr>
+<td class="row-label">變速系統</td>
+<td>手排</td>
+<td>6速手排 / 5速手自排</td>
+<td>手排</td>
+</tr>
+
+<tr>
+<td class="row-label">驅動方式</td>
+<td>後輪驅動</td>
+<td>後輪驅動</td>
+<td>後輪 / 四輪</td>
+</tr>
+
+<tr>
+<td class="row-label">載重能力(kg)</td>
+<td>約1,200–1,300</td>
+<td>約1,500–1,575</td>
+<td>約1,300–1,400</td>
+</tr>
+
+<tr>
+<td class="row-label">貨斗長度(mm)</td>
+<td>2,060</td>
+<td>2,185</td>
+<td>2,185</td>
+</tr>
+
+<tr>
+<td class="row-label">每年稅金(約)</td>
+<td>約11,000–12,000</td>
+<td>約10,000–11,000</td>
+<td>約10,000–11,000</td>
+</tr>
+
+<tr>
+<td class="row-label">特色評比</td>
+<td class="highlight">價格最親民</td>
+<td class="highlight">妥善率高、耐操</td>
+<td class="highlight">動力與配備較完整</td>
+</tr>
+
+</tbody>
+</table>
+
+<div class="note">
+※ 規格與價格依實際車型與配備有所差異
 </div>
 
+</div>
+
+</div>
+
+<div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img">
 </div>
 
 <script>
-
-const cars = [
-{
-name: "DFSK 大穩發",
-auto: false,
-awd: false,
-load: 1300,
-desc: "價格最便宜，但無自排"
-},
-{
-name: "Hyundai Porter II",
-auto: true,
-awd: false,
-load: 1575,
-desc: "最穩定首選，自排成熟"
-},
-{
-name: "Kia K2500（2WD）",
-auto: true,
-awd: false,
-load: 1400,
-desc: "有自排但僅限2WD"
-},
-{
-name: "Kia K2500（4WD）",
-auto: false,
-awd: true,
-load: 1400,
-desc: "有四驅但無自排"
+function zoom(src){
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
 }
-];
-
-function filterCars() {
-
-let needAuto = document.getElementById("auto").checked;
-let needAwd = document.getElementById("awd").checked;
-let minLoad = parseInt(document.getElementById("load").value);
-
-let result = cars.filter(car => {
-
-if (needAuto && !car.auto) return false;
-if (needAwd && !car.awd) return false;
-if (car.load < minLoad) return false;
-
-return true;
-
-});
-
-let html = "";
-
-if (result.length === 0) {
-html = "<p>❌ 沒有符合條件的車款</p>";
-} else {
-result.forEach(car => {
-html += `
-<div class="car">
-<strong>${car.name}</strong><br>
-載重：約 ${car.load} kg<br>
-${car.desc}
-</div>
-`;
-});
-}
-
-document.getElementById("result").innerHTML = html;
-
-}
-
 </script>
 
 </body>
