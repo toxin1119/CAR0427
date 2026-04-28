@@ -1,249 +1,264 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026 雙廂貨車對照表</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 雙廂貨車規格對照表</title>
 
-<style>
-:root {
-    --primary: #2f3e8f;
-    --light: #eef2ff;
-    --bg: #f5f7fb;
-}
+    <style>
+        :root {
+            --primary: #2f3e8f;
+            --light: #eef2ff;
+            --bg: #f5f7fb;
+        }
 
-body {
-    font-family: 'Microsoft JhengHei', sans-serif;
-    background: var(--bg);
-    margin: 0;
-}
+        body {
+            font-family: 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+            background: var(--bg);
+            margin: 0;
+            color: #333;
+        }
 
-/* Header */
-header {
-    background: var(--primary);
-    color: white;
-    text-align: center;
-    padding: 30px;
-}
+        /* Header */
+        header {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
 
-/* Layout */
-.container {
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 15px;
-}
+        /* Layout */
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
 
-/* 卡片 */
-.car-grid {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-}
+        /* 卡片區域 */
+        .car-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
 
-.car-card {
-    width: 300px;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
+        .car-card {
+            width: 300px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
 
-.car-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    cursor: pointer;
-}
+        .car-card:hover {
+            transform: translateY(-5px);
+        }
 
-.car-title {
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-    color: var(--primary);
-}
+        .car-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            cursor: pointer;
+            background-color: #eee;
+        }
 
-/* 表格 */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-}
+        .car-title {
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.1em;
+        }
 
-th {
-    background: var(--primary);
-    color: white;
-    padding: 12px;
-}
+        /* 表格樣式 */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
 
-td {
-    padding: 12px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
 
-.row-label {
-    background: var(--light);
-    text-align: left;
-    font-weight: bold;
-}
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            font-size: 1.05em;
+        }
 
-.note {
-    font-size: 13px;
-    color: #666;
-    margin-top: 10px;
-}
+        td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
 
-/* Lightbox */
-#lightbox {
-    display: none;
-    position: fixed;
-    background: rgba(0,0,0,0.9);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
+        .row-label {
+            background: var(--light);
+            text-align: left;
+            font-weight: bold;
+            width: 120px;
+            color: #2c3e50;
+        }
 
-#lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-}
-</style>
+        /* 重點標記 */
+        .highlight-4wd {
+            color: #d35400;
+            font-weight: bold;
+        }
+
+        .note {
+            font-size: 14px;
+            color: #666;
+            margin-top: 15px;
+            padding: 10px;
+            border-left: 4px solid var(--primary);
+            background: #fff;
+        }
+
+        /* Lightbox 燈箱 */
+        #lightbox {
+            display: none;
+            position: fixed;
+            background: rgba(0,0,0,0.9);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 3px solid white;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-<h1>2026 雙廂貨車規格對照</h1>
+    <h1>2026 雙廂貨車規格對照</h1>
 </header>
 
 <div class="container">
 
-<!-- 車圖 -->
-<div class="car-grid">
+    <div class="car-grid">
+        <div class="car-card">
+            <img src="1.jpg" alt="DFSK 大穩發" onclick="zoom(this.src)">
+            <div class="car-title">DFSK 大穩發</div>
+        </div>
+        <div class="car-card">
+            <img src="2.jpg" alt="Hyundai Porter II" onclick="zoom(this.src)">
+            <div class="car-title">Hyundai Porter II</div>
+        </div>
+        <div class="car-card">
+            <img src="3.jpg" alt="Kia 卡旺 K2500" onclick="zoom(this.src)">
+            <div class="car-title">Kia 卡旺 K2500</div>
+        </div>
+    </div>
 
-<div class="car-card">
-    <img src="1.jpg" onclick="zoom(this.src)">
-    <div class="car-title">DFSK 大穩發</div>
-</div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th class="row-label">車款 / 車型</th>
+                    <th>DFSK</th>
+                    <th>Porter II ( 2WD )</th>
+                    <th>K2500 ( 2WD )</th>
+                    <th>K2500 ( 4WD )</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="row-label">座位</td>
+                    <td>4人</td>
+                    <td>6人</td>
+                    <td>6人</td>
+                    <td>6人</td>
+                </tr>
+                <tr>
+                    <td class="row-label">引擎</td>
+                    <td>1.5L 汽油</td>
+                    <td>2.5L 柴油</td>
+                    <td>2.5L 柴油</td>
+                    <td>2.5L 柴油</td>
+                </tr>
+                <tr>
+                    <td class="row-label">變速</td>
+                    <td>手排</td>
+                    <td>手排 / 手自排</td>
+                    <td>手排 / 手自排</td>
+                    <td>手排</td>
+                </tr>
+                <tr>
+                    <td class="row-label">驅動</td>
+                    <td>後驅</td>
+                    <td>後驅</td>
+                    <td>後驅</td>
+                    <td class="highlight-4wd">四驅</td>
+                </tr>
+                <tr>
+                    <td class="row-label">載重</td>
+                    <td>1200–1300kg</td>
+                    <td>1500–1575kg</td>
+                    <td>1300–1400kg</td>
+                    <td>1300–1400kg</td>
+                </tr>
+                <tr>
+                    <td class="row-label">貨斗</td>
+                    <td>2060mm</td>
+                    <td>2185mm</td>
+                    <td>2185mm</td>
+                    <td>2185mm</td>
+                </tr>
+                <tr>
+                    <td class="row-label">價格</td>
+                    <td>55–65萬</td>
+                    <td>100–115萬</td>
+                    <td>102–115萬</td>
+                    <td>105–120萬</td>
+                </tr>
+                <tr>
+                    <td class="row-label">定位</td>
+                    <td>便宜入門</td>
+                    <td>主流首選</td>
+                    <td>有自排選擇</td>
+                    <td>工地四驅</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-<div class="car-card">
-    <img src="2.jpg" onclick="zoom(this.src)">
-    <div class="car-title">Hyundai Porter II</div>
-</div>
-
-<div class="car-card">
-    <img src="3.jpg" onclick="zoom(this.src)">
-    <div class="car-title">Kia 卡旺 K2500</div>
-</div>
-
-</div>
-
-<!-- 表格 -->
-<table>
-
-<thead>
-<tr>
-<th class="row-label">車款 / 車型</th>
-<th>DFSK</th>
-<th>Porter II（2WD）</th>
-<th>K2500（2WD）</th>
-<th>K2500（4WD）</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td class="row-label">座位</td>
-<td>4人</td>
-<td>6人</td>
-<td>6人</td>
-<td>6人</td>
-</tr>
-
-<tr>
-<td class="row-label">引擎</td>
-<td>1.5L 汽油</td>
-<td>2.5L 柴油</td>
-<td>2.5L 柴油</td>
-<td>2.5L 柴油</td>
-</tr>
-
-<tr>
-<td class="row-label">變速</td>
-<td>手排</td>
-<td>手排 / 手自排</td>
-<td>手排 / 手自排</td>
-<td>手排</td>
-</tr>
-
-<tr>
-<td class="row-label">驅動</td>
-<td>後驅</td>
-<td>後驅</td>
-<td>後驅</td>
-<td>四驅</td>
-</tr>
-
-<tr>
-<td class="row-label">載重</td>
-<td>1200–1300kg</td>
-<td>1500–1575kg</td>
-<td>1300–1400kg</td>
-<td>1300–1400kg</td>
-</tr>
-
-<tr>
-<td class="row-label">貨斗</td>
-<td>2060mm</td>
-<td>2185mm</td>
-<td>2185mm</td>
-<td>2185mm</td>
-</tr>
-
-<tr>
-<td class="row-label">價格</td>
-<td>55–65萬</td>
-<td>100–115萬</td>
-<td>102–115萬</td>
-<td>105–120萬</td>
-</tr>
-
-<tr>
-<td class="row-label">定位</td>
-<td>便宜入門</td>
-<td>主流首選</td>
-<td>有自排選擇</td>
-<td>工地四驅</td>
-</tr>
-
-</tbody>
-</table>
-
-<div class="note">
-※ 自排僅提供於 2WD 車型，4WD 僅有手排
-</div>
+    <div class="note">
+        ※ 根據圖片標示：自排僅提供於 2WD 車型，4WD 車型僅提供手排。
+    </div>
 
 </div>
 
-<!-- Lightbox -->
 <div id="lightbox" onclick="this.style.display='none'">
-    <img id="lightbox-img">
+    <img id="lightbox-img" src="" alt="放大圖示">
 </div>
 
 <script>
-function zoom(src){
-    document.getElementById("lightbox").style.display = "flex";
-    document.getElementById("lightbox-img").src = src;
-}
+    function zoom(src){
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        lightbox.style.display = "flex";
+        lightboxImg.src = src;
+    }
 </script>
 
 </body>
