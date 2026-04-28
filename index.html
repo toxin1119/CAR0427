@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026 雙廂貨車專業對照表</title>
+<title>2026 雙廂貨車對照表</title>
 
 <style>
 :root {
@@ -18,6 +18,7 @@ body {
     margin: 0;
 }
 
+/* Header */
 header {
     background: var(--primary);
     color: white;
@@ -25,12 +26,45 @@ header {
     padding: 30px;
 }
 
+/* Layout */
 .container {
     max-width: 1100px;
     margin: 30px auto;
     padding: 15px;
 }
 
+/* 卡片 */
+.car-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.car-card {
+    width: 300px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.car-title {
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* 表格 */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -63,41 +97,72 @@ td {
     margin-top: 10px;
 }
 
+/* Lightbox */
+#lightbox {
+    display: none;
+    position: fixed;
+    background: rgba(0,0,0,0.9);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>2026 雙廂貨車規格對照（專業版）</h1>
+<h1>2026 雙廂貨車規格對照</h1>
 </header>
 
 <div class="container">
 
+<!-- 車圖 -->
+<div class="car-grid">
+
+<div class="car-card">
+    <img src="1.jpg" onclick="zoom(this.src)">
+    <div class="car-title">DFSK 大穩發</div>
+</div>
+
+<div class="car-card">
+    <img src="2.jpg" onclick="zoom(this.src)">
+    <div class="car-title">Hyundai Porter II</div>
+</div>
+
+<div class="car-card">
+    <img src="3.jpg" onclick="zoom(this.src)">
+    <div class="car-title">Kia 卡旺 K2500</div>
+</div>
+
+</div>
+
+<!-- 表格 -->
 <table>
 
 <thead>
 <tr>
 <th class="row-label">車款 / 車型</th>
-<th>DFSK 大穩發</th>
-<th>Hyundai Porter II（2WD）</th>
-<th>Kia K2500（2WD）</th>
-<th>Kia K2500（4WD）</th>
+<th>DFSK</th>
+<th>Porter II（2WD）</th>
+<th>K2500（2WD）</th>
+<th>K2500（4WD）</th>
 </tr>
 </thead>
 
 <tbody>
 
 <tr>
-<td class="row-label">車型</td>
-<td>雙廂</td>
-<td>雙廂</td>
-<td>雙廂</td>
-<td>雙廂</td>
-</tr>
-
-<tr>
-<td class="row-label">座位數</td>
+<td class="row-label">座位</td>
 <td>4人</td>
 <td>6人</td>
 <td>6人</td>
@@ -107,76 +172,79 @@ td {
 <tr>
 <td class="row-label">引擎</td>
 <td>1.5L 汽油</td>
-<td>2.5L 柴油渦輪</td>
+<td>2.5L 柴油</td>
 <td>2.5L 柴油</td>
 <td>2.5L 柴油</td>
 </tr>
 
 <tr>
-<td class="row-label">變速系統</td>
+<td class="row-label">變速</td>
 <td>手排</td>
-<td>6速手排 / 5速手自排</td>
-<td>6速手排 / 5速手自排</td>
-<td>6速手排（無自排）</td>
+<td>手排 / 手自排</td>
+<td>手排 / 手自排</td>
+<td>手排</td>
 </tr>
 
 <tr>
-<td class="row-label">驅動方式</td>
-<td>後輪驅動</td>
-<td>後輪驅動</td>
-<td>後輪驅動</td>
-<td>四輪驅動</td>
+<td class="row-label">驅動</td>
+<td>後驅</td>
+<td>後驅</td>
+<td>後驅</td>
+<td>四驅</td>
 </tr>
 
 <tr>
-<td class="row-label">載重能力(kg)</td>
-<td>約1,200–1,300</td>
-<td>約1,500–1,575</td>
-<td>約1,300–1,400</td>
-<td>約1,300–1,400</td>
+<td class="row-label">載重</td>
+<td>1200–1300kg</td>
+<td>1500–1575kg</td>
+<td>1300–1400kg</td>
+<td>1300–1400kg</td>
 </tr>
 
 <tr>
-<td class="row-label">貨斗長度(mm)</td>
-<td>約2060</td>
-<td>約2185</td>
-<td>約2185</td>
-<td>約2185</td>
+<td class="row-label">貨斗</td>
+<td>2060mm</td>
+<td>2185mm</td>
+<td>2185mm</td>
+<td>2185mm</td>
 </tr>
 
 <tr>
-<td class="row-label">參考售價(萬)</td>
-<td>55–65</td>
-<td>約100–115</td>
-<td>102–115</td>
-<td>105–120</td>
+<td class="row-label">價格</td>
+<td>55–65萬</td>
+<td>100–115萬</td>
+<td>102–115萬</td>
+<td>105–120萬</td>
 </tr>
 
 <tr>
-<td class="row-label">每年稅金(約)</td>
-<td>約11,000–12,000</td>
-<td>約10,000–11,000</td>
-<td>約10,000–11,000</td>
-<td>約10,000–11,000</td>
-</tr>
-
-<tr>
-<td class="row-label">定位建議</td>
-<td>入門 / 價格優先</td>
-<td>主流首選 / 高妥善率</td>
-<td>性價比 / 有自排</td>
-<td>工地 / 需要四驅</td>
+<td class="row-label">定位</td>
+<td>便宜入門</td>
+<td>主流首選</td>
+<td>有自排選擇</td>
+<td>工地四驅</td>
 </tr>
 
 </tbody>
 </table>
 
 <div class="note">
-※ 所有數據依台灣市場常見規格整理，實際數值依年份、車型與配備略有差異。<br>
-※ K2500 與 Porter II 自排僅提供於 2WD 車型，4WD 僅提供手排。
+※ 自排僅提供於 2WD 車型，4WD 僅有手排
 </div>
 
 </div>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img">
+</div>
+
+<script>
+function zoom(src){
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+}
+</script>
 
 </body>
 </html>
