@@ -1,267 +1,165 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 雙廂貨車規格對照表</title>
-
-    <style>
-        :root {
-            --primary: #2f3e8f;
-            --light: #eef2ff;
-            --bg: #f5f7fb;
-        }
-
-        body {
-            font-family: 'Microsoft JhengHei', 'PingFang TC', sans-serif;
-            background: var(--bg);
-            margin: 0;
-            color: #333;
-        }
-
-        /* Header */
-        header {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 30px;
-        }
-
-        /* Layout */
-        .container {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 15px;
-        }
-
-        /* 卡片區域 */
-        .car-grid {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-
-        .car-card {
-            width: 300px;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-
-        .car-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .car-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            cursor: pointer;
-            background-color: #eee;
-        }
-
-        .car-title {
-            text-align: center;
-            padding: 15px;
-            font-weight: bold;
-            color: var(--primary);
-            font-size: 1.1em;
-        }
-
-        /* 表格樣式 */
-        .table-container {
-            width: 100%;
-            overflow-x: auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 800px;
-        }
-
-        th {
-            background: var(--primary);
-            color: white;
-            padding: 15px;
-            font-size: 1.05em;
-        }
-
-        td {
-            padding: 15px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-
-        .row-label {
-            background: var(--light);
-            text-align: left;
-            font-weight: bold;
-            width: 120px;
-            color: #2c3e50;
-        }
-
-        /* 重點標記 */
-        .highlight-4wd {
-            color: #d35400;
-            font-weight: bold;
-        }
-
-        .note {
-            font-size: 14px;
-            color: #666;
-            margin-top: 15px;
-            padding: 10px;
-            border-left: 4px solid var(--primary);
-            background: #fff;
-        }
-
-        /* Lightbox 燈箱 */
-        #lightbox {
-            display: none;
-            position: fixed;
-            background: rgba(0,0,0,0.9);
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        #lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border: 3px solid white;
-            border-radius: 4px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 雙廂小貨車規格更新對照</title>
+<style>
+:root {
+    --primary: #2f3e8f;
+    --primary-light: #eef2ff;
+    --accent: #e53935;
+    --bg: #f5f7fb;
+}
+body {
+    font-family: 'Microsoft JhengHei', sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: #333;
+}
+header {
+    background: linear-gradient(135deg, var(--primary), #4c5bd4);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 10px;
+}
+.table-wrapper {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th {
+    background: var(--primary);
+    color: white;
+    padding: 14px;
+}
+td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+.row-label {
+    background: var(--primary-light);
+    font-weight: 600;
+    color: var(--primary);
+    text-align: left;
+    width: 160px;
+}
+.highlight-red {
+    color: var(--accent);
+    font-weight: bold;
+}
+.highlight-blue {
+    color: #1976d2;
+    font-weight: bold;
+}
+.tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.tag-at { background: #ffebee; color: #c62828; }
+.tag-mt { background: #e3f2fd; color: #1565c0; }
+</style>
 </head>
-
 <body>
 
 <header>
-    <h1>2026 雙廂貨車規格對照</h1>
+    <h1>2025-2026 雙廂車款規格對照表</h1>
 </header>
 
 <div class="container">
-
-    <div class="car-grid">
-        <div class="car-card">
-            <img src="1.jpg" alt="DFSK 大穩發" onclick="zoom(this.src)">
-            <div class="car-title">DFSK 大穩發</div>
-        </div>
-        <div class="car-card">
-            <img src="2.jpg" alt="Hyundai Porter II" onclick="zoom(this.src)">
-            <div class="car-title">Hyundai Porter II</div>
-        </div>
-        <div class="car-card">
-            <img src="3.jpg" alt="Kia 卡旺 K2500" onclick="zoom(this.src)">
-            <div class="car-title">Kia 卡旺 K2500</div>
-        </div>
-    </div>
-
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th class="row-label">車款 / 車型</th>
-                    <th>DFSK</th>
-                    <th>Porter II ( 2WD )</th>
-                    <th>K2500 ( 2WD )</th>
-                    <th>K2500 ( 4WD )</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="row-label">座位</td>
-                    <td>4人</td>
-                    <td>6人</td>
-                    <td>6人</td>
-                    <td>6人</td>
-                </tr>
-                <tr>
-                    <td class="row-label">引擎</td>
-                    <td>1.5L 汽油</td>
-                    <td>2.5L 柴油</td>
-                    <td>2.5L 柴油</td>
-                    <td>2.5L 柴油</td>
-                </tr>
-                <tr>
-                    <td class="row-label">變速</td>
-                    <td>手排</td>
-                    
-                    <td>手排 / <span class="highlight-4wd">手自排</span></td>
-                    
-                    <td>手排 / <span class="highlight-4wd">手自排</span></td>
-                    <td>手排</td>
-                </tr>
-                <tr>
-                    <td class="row-label">驅動</td>
-                    <td>後驅</td>
-                    <td>後驅</td>
-                    <td>後驅</td>
-                    <td class="highlight-4wd">四驅</td>
-                </tr>
-                <tr>
-                    <td class="row-label">載重</td>
-                    <td>1200–1300kg</td>
-                    <td>1500–1575kg</td>
-                    <td>1300–1400kg</td>
-                    <td>1300–1400kg</td>
-                </tr>
-                <tr>
-                    <td class="row-label">貨斗</td>
-                    <td>2060mm</td>
-                    <td>2185mm</td>
-                    <td>2185mm</td>
-                    <td>2185mm</td>
-                </tr>
-                <tr>
-                    <td class="row-label">價格</td>
-                    <td>55–65萬</td>
-                    <td>100–115萬</td>
-                    <td>102–115萬</td>
-                    <td>105–120萬</td>
-                </tr>
-                <tr>
-                    <td class="row-label">定位</td>
-                    <td>便宜入門</td>
-                    <td>主流首選</td>
-                    <td>有自排選擇</td>
-                    <td>工地四驅</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="note">
-        ※ 根據圖片標示：自排僅提供於 2WD 車型，4WD 車型僅提供手排。
-    </div>
-
+<div class="table-wrapper">
+<table>
+<thead>
+<tr>
+<th class="row-label">品牌車款</th>
+<th>Kia 卡旺 K2500<br>(2026年式)</th>
+<th>Hyundai Porter<br>(2025年式)</th>
+<th>DFSK 大穩發<br>(2025年式)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="row-label">特定型號</td>
+<td>2WD 雙廂自排</td>
+<td>雙廂型 手自排</td>
+<td>C32XB21SF 雙廂式</td>
+</tr>
+<tr>
+<td class="row-label">建議售價</td>
+<td class="highlight-red">101.8 萬</td>
+<td>95.8 萬</td>
+<td class="highlight-blue">63.8 萬</td>
+</tr>
+<tr>
+<td class="row-label">變速系統</td>
+<td><span class="tag tag-at">5速手自排</span></td>
+<td><span class="tag tag-at">5速手自排</span></td>
+<td><span class="tag tag-mt">5速手排</span></td>
+</tr>
+<tr>
+<td class="row-label">動力型式</td>
+<td>2.5L 柴油渦輪</td>
+<td>2.5L 柴油渦輪</td>
+<td>1.5L 汽油</td>
+</tr>
+<tr>
+<td class="row-label">最大扭力</td>
+<td>26.0 kgm</td>
+<td>26.0 kgm</td>
+<td>14.8 kgm</td>
+</tr>
+<tr>
+<td class="row-label">座位數</td>
+<td>6 人 (3+3)</td>
+<td>6 人 (3+3)</td>
+<td>4 人 (2+2)</td>
+</tr>
+<tr>
+<td class="row-label">車身長度</td>
+<td>5,125 mm</td>
+<td>5,135 mm</td>
+<td>4,740 mm</td>
+</tr>
+<tr>
+<td class="row-label">迴轉半徑</td>
+<td>5.0 m</td>
+<td>5.4 m</td>
+<td>5.6 m</td>
+</tr>
+<tr>
+<td class="row-label">平均油耗</td>
+<td>9.3 km/ltr</td>
+<td>(依據官方公佈)</td>
+<td>12.4 km/ltr</td>
+</tr>
+</tbody>
+</table>
 </div>
 
-<div id="lightbox" onclick="this.style.display='none'">
-    <img id="lightbox-img" src="" alt="放大圖示">
+<div style="margin-top:20px; background:#fff; padding:20px; border-radius:14px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+    <h3 style="color:var(--primary); margin-top:0;">詳細資料重點總結：</h3>
+    <ul>
+        <li><b>Kia 卡旺 (2026)：</b> 雖然價格突破百萬，但提供最新的 7 吋多媒體螢幕與完整的手自排配置。迴轉半徑僅 5 米，是三者中最靈活的。</li>
+        <li><b>Hyundai Porter (2025)：</b> 價格較卡旺平易近人（便宜約 6 萬），軸距較長（2,640mm），行駛穩定性通常評價較高。</li>
+        <li><b>DFSK 大穩發 (2025)：</b> 價格極具優勢，但<b>沒有自排</b>，且座位數僅為 4 人。若您有載超過 4 人的需求或必須要自排，此款不符。</li>
+    </ul>
 </div>
-
-<script>
-    function zoom(src){
-        const lightbox = document.getElementById("lightbox");
-        const lightboxImg = document.getElementById("lightbox-img");
-        lightbox.style.display = "flex";
-        lightboxImg.src = src;
-    }
-</script>
+</div>
 
 </body>
 </html>
